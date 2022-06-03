@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>システム開発A・サンプル</title>
+        <script src="./encode.js"></script>
+        <script src="./Hantei_03.js"></script>
+    </head>
+    <body>
+        <h1>テキスト処理</h1>
+        <div>
+            <label>
+                以下にテキストを入力してください<br>
+                <textarea type="text" id="textbox"></textarea>
+            </label>
+        </div>
+
+        <p>★使用されている文字コードを判別し、誤りがあれば変換(Consoleで表示)します</p>
+        <a>※ 一部、GitHubに公開されている"encoding.js"を使用しました</a>
+        <div>
+            <label>
+                <button type="button" name="Hantei1" onclick="MHantei()">文字コード判定</button>
+                <select id="Moji">
+                    <option value="Unicode">Unicode</option>
+                    <option value="ISO-2022-JP">ISO-2022-JP</option>
+                    <option value="Shift JIS">Shift JIS</option>
+                    <option value="EUC">EUC</option>
+                </select>
+                <button type="button" name="Hantei1_2" onclick="MHenkan()">文字コード変換</button>
+            </label>
+        </div>
+
+        <p>★使用されている改行コードを判別したり、変換(Consoleで表示)します</p>
+        <div>
+            <label>
+                <button type="button" name="Hantei2" onclick="KHantei()">改行コード判定</button>
+            </label>
+            <label>
+                <select id="Kaigyou">
+                    <option value="CR">CR(キャリッジリターン)</option>
+                    <option value="LF">LF(ラインフィード)</option>
+                    <option value="CRLF">CRLF</option>
+                </select>
+                <button type="button" name="Hantei2_2" onclick="Henkan()">改行コード変換</button>
+            </label>
+        </div>
+
+        <p>★テキストが全角か半角か、文字列か数値を判定します（全４パターン）</p>
+        <div>
+            <label>
+                <button type="button" name="Hantei3" onclick="SHantei()">文字種別の判定</button>
+                <p id="Syurui">文字の種別を判定中・・・</p>
+            </label>
+        </div>
+    </body>
+
+    <style>
+        #textbox{height: 150px; width: 500px;}
+    </style>
+</html>
